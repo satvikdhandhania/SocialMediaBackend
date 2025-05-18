@@ -20,5 +20,10 @@ Using Maven:
 - ./mvnw spring-boot:run
 
 
-POST Request
+POST Request or use Postman
 - curl -X POST -H "Content-Type: application/json" -d '{"name": "My First Item", "description": "This is a test item."}' http://localhost:8080/api/items
+
+
+For debugging you can run using maven run config with the following command. Otherwise the breakpoints wont be hit during debug. Make sure to click on attach debgger on the console
+
+clean spring-boot:run -Dspring-boot.run.jvmArguments=-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
