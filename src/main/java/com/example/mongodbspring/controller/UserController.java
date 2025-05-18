@@ -93,7 +93,7 @@ public class UserController {
         try {
             if (activeSessions.containsKey(sessionId)) {
                 User user = userRepository.findByEmail(sessionId);
-                user.setPassword("");
+                //user.setPassword("");
                 return new ResponseEntity<>(user, HttpStatus.OK);
             } else {
                 throw new BadRequestException("No such session exists!");
